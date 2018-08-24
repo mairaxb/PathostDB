@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documentation PathostDB </title>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--
+anatine, a free CSS web template by ZyPOP (zypopwebtemplates.com/)
+
+Download: http://zypopwebtemplates.com/
+
+License: Creative Commons Attribution
+//-->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar" class="column-left">
+
+			<header>
+				<h1><a href="#">Documentation</a></h1>
+
+				<h2>PathostDB - Host-pathogen interactions</h2>
+
+			</header>
+
+			<nav id="mainnav">
+							<ul id="menu-accordeon">
+						     <li><a href="index.html">Home</a>
+						        <ul>
+						           <li><a href="organization.html">Structure</a></li>
+						           <li><a href="examples.html">Examples</a></li>
+						        </ul>
+						     </li>
+						      <li><a href="get-started.html">Installation</a>
+						        <ul>
+						           <li><a href="input.html">Input data</a></li>
+                       <li><a href="step.html">Step by step installation</a></li>
+						        </ul>
+						     </li>
+						  </ul>
+			</nav>
+
+
+
+			</aside>
+			<section id="content" class="column-right">
+
+	    <article>
+
+
+			<h2>Configuration</h2>
+			<br/>
+			<hr width="100%" color="#996600">
+			<br/>
+
+            <p><strong> Server </strong></p>
+            <p> The Apache server can be installed from several ways.
+              From an ubuntu distribution, follow the steps described <a href="https://doc.ubuntu-fr.org/apache2"> here</a>.</p>
+
+            <br/>
+            <p><strong> Database </strong></p>
+            <p> All the files needed for the creation of the interface can be found on the <a href="https://github.com/SouthGreenPlatform/pathostDB"> github page </a> of the project.
+             Put everything on the server by using the command : <i> git clone https://github.com/SouthGreenPlatform/pathostDB </i>.</p>
+             <p>There should be therefore three important directories on the server : cgi-bin,database and html.
+             The cgi-bin directory contains the executable files, and the html directory contains the temporary and style files.
+						  The database directory is where your data have to be stored. Put your completed templates files here. These files must be in TSV (Tab Seperated Format). </p>
+            <p> Make sure that Apache have the rights to read the all the files. To do so, put Apache as group owner of the files <i> sudo chgrp * </i>
+              and make sur the files are in mode 775. </p>
+            <p> </p>
+
+            <br/>
+            <p><strong> Configuration of the interface </strong></p>
+            <p> The file used for the configuration of the interface can be found on the cgi-bin directory and is named 'Configuration.pm'.</p>
+            <p> The different URL in the file have to match the URL of the web interface. For example, if the web server is configurated by default on localhost,
+              the first URL is going to be : <i> our $JAVASCRIPT_URL = "http://localhost/html" </i>. </p>
+            <br/>
+            <p> The interface can be configurated into 2 different modes and the variable use to control the modification between these 2 modes is '<i>our $CONF_INTERFACE</i> ':
+              <ul>
+                <li> Phenotypic informations (plants resistance/sensibility to pathogens) => <i>our $CONF_INTERFACE = 0;</i> </li>
+                <li> Epidemiological observations (presence/absence of disease in parcels) => <i>our $CONF_INTERFACE = 1;</i> </li>
+              </ul>
+
+            </p>
+
+						<br/>
+						<p><strong> Configuration of the home page </strong></p>
+						<p> A text file is available on the server to allow the user to describe his project. The file 'config_home.txt' is available on the html directory. </p>
+						<p> In the 'Partners' section, put the logos of the contributors of your project. These different logos must be stored in
+							the following directory : 'html/logos/partners/'
+						</p>
+
+						<br/>
+            <p><strong> Configuration of the banner </strong></p>
+						<p> It is possible to add the logo of your own project or structure in the banner of the interface.
+							To do so, add your image in the following directory of the server : 'html/logos/logo_banniere/' </p>
+
+						<br/>
+            <p><strong> Pictures for the slideshow </strong></p>
+            <p> A picture slideshow is present in the Pathogens tab to display pictures of the pathogens and their symptoms in plants.
+              These pictures have to be stored in the directory 'html/carrousel/img_carrousel' of the server. The pictures can be in JPG/JPEG or PNG format. </p>
+
+
+
+		</article>
+
+
+
+			<footer class="clear">
+				<p>&copy; 2015 sitename.  <a href="http://zypopwebtemplates.com/"> by ZyPOP</p>
+			</footer>
+
+		</section>
+
+		<div class="clear"></div>
+
+	</section>
+
+
+</body>
+</html>
